@@ -18,15 +18,18 @@ for (int i = 0; i < n; i++)
 }
 
 double SumaPromedios = 0;
-DispositivosTec prueba = dispositivos[0];
+DispositivosTec MEjorPrueba = dispositivos[0];
 Console.WriteLine(" \n Listado de los dispoditivos ");
 foreach (DispositivosTec disp in dispositivos)
 {
     disp.MostarDatos();
     SumaPromedios += disp.CalcularPromedio();
-    if (disp.CalcularPromedio() > prueba.CalcularPromedio()) { prueba = disp; } ;
+    if (disp.CalcularPromedio() > MEjorPrueba.CalcularPromedio()) { MEjorPrueba = disp; } ;
 }
-
+Console.WriteLine($"Promedio general { SumaPromedios/dispositivos.Count :F2} ");
+Console.WriteLine("mejor resultado en pruebas: ");
+MEjorPrueba.MostarDatos();
+ 
 
 class DispositivosTec
 {
